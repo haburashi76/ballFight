@@ -28,7 +28,7 @@ class BallFightApplication : Application() {
         ).parentFile,
         "balls"
     )
-    private val updateFolder = File(ballFolder, "update")
+    private val updateFolder = File(ballFolder, "update").apply { mkdirs() }
 
     override fun start(stage: Stage) {
 
@@ -49,7 +49,6 @@ class BallFightApplication : Application() {
     }
 
     private fun getUpdateFiles(): Array<File> {
-        updateFolder.mkdirs()
         return updateFolder.listFiles { file -> !file.isDirectory && file.name.endsWith(".jar") }?: return emptyArray()
     }
 
@@ -68,8 +67,21 @@ class BallFightApplication : Application() {
         val ballFiles = getBallFiles()
         if (ballFiles.isEmpty()) return
 
-        val updateFolder = File(ballFolder, "update")
         val updated = arrayListOf<File>()
+
+        getUpdateFiles().forEach { update ->
+            if (ballFiles.none { file -> file.name == update.name }) {
+                update.runCatching {
+                    copyTo(File(ballFolder, name), true)
+                }.onSuccess {
+                    updated += it
+                    update.runCatching { delete() }
+                }.onFailure {
+                    it.printStackTrace()
+                    println("Failed to update ability ${update.nameWithoutExtension}")
+                }
+            }
+        }
 
         for (ballFile in ballFiles) {
             val updateFile = File(updateFolder, ballFile.name)
