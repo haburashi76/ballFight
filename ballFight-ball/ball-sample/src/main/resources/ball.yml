@@ -1,0 +1,5 @@
+group: ${group}
+name: ${projectName}
+version: ${version}
+main: ${group}.ballfight.ball.${packageName}.${ballName.capitalize()}Ball
+author: ${author}

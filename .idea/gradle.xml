@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ballFight-ball" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-bald" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-chinese" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-divideman" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-furry-master" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-happypencil" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-hyeonseok" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-lady" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-sample" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-sporeman" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-test1" />
+            <option value="$PROJECT_DIR$/ballFight-ball/ball-test2" />
+            <option value="$PROJECT_DIR$/ballFight-core" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
